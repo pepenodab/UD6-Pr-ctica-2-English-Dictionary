@@ -15,10 +15,13 @@ public class Dictionary {
     Dictionary.dictionary = dictionary;
   }
 
+  public static void addWord() {
+
+  }
+
   @Override
   public String toString() {
     return "Dictionary []";
   }
 
-  
 }
