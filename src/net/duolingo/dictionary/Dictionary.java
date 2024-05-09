@@ -15,8 +15,19 @@ public class Dictionary {
     Dictionary.dictionary = dictionary;
   }
 
-  public static void addWord() {
+  public static void addSet(String initial, Set<String> setWords) {
+    dictionary.put(initial, setWords);
 
+  }
+
+  public static String getKeySets() {
+    String keysSets = "";
+    Set<String> keys = dictionary.keySet();
+
+    for (String key : keys) {
+      keysSets += key + "\n";
+    }
+    return keysSets;
   }
 
   @Override
