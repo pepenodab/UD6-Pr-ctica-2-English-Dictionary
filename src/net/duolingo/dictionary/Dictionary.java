@@ -21,18 +21,25 @@ public class Dictionary {
   }
 
   public static String getKeySets() {
-    String keysSets = "";
-    Set<String> keys = dictionary.keySet();
 
-    for (String key : keys) {
-      keysSets += key + "\n";
+    if(dictionary.isEmpty()){
+      return "El diccionario se encuentra vacio, comience a introducir palabras al diccionario";
+
+    } else {
+
+      String keysSets = "";
+      Set<String> keys = dictionary.keySet();
+
+      for (String key : keys) {
+        keysSets += key + "\n";
+      }
+      return "Se encuentran las siguientes iniciales: \n" + keysSets;
     }
-    return keysSets;
   }
 
   @Override
   public String toString() {
-    return "Dictionary []";
+    return "En el diccionario encontramos: \n []";
   }
 
 }
