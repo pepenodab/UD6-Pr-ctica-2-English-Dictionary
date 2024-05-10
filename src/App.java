@@ -27,7 +27,7 @@ public class App {
                         break;
                     } else {
                         word = JOptionPane.showInputDialog("Por favor, introduce una palabra:");
-                        Word.deleteWord(word);
+                        Word.deleteWord(Word.wordCleaner(word));
                         break;
                     }
 
@@ -37,7 +37,7 @@ public class App {
                         break;
                     } else {
                         word = JOptionPane.showInputDialog("Por favor, introduce una palabra:");
-                        Word.isThereAWord(word);
+                        Word.isThereAWord(Word.wordCleaner(word));
                         break;
                     }
 
@@ -48,7 +48,7 @@ public class App {
                     if(Dictionary.getDictionary().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "El diccionario se encuentra vacio, primero ingrese palabras en el diccionario");
                     } else {
-                        String initial = JOptionPane.showInputDialog(null, "Ingrese la inicial para buscar en el diccionario");
+                        String initial = JOptionPane.showInputDialog(null, "Ingrese la inicial para buscar en el diccionario").toLowerCase();
                         JOptionPane.showMessageDialog(null, Dictionary.getDictionary().get(initial));
                     };
 
