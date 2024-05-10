@@ -10,32 +10,17 @@ public class App {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         Boolean keepAsking = true;
-        // int option = 0;
         String word;
 
         while (keepAsking) {
-            // while (keepAsking) {
-            // System.out.println(Menu.printMenu());
-            // try {
-            // option = Integer.parseInt(kb.nextLine());
-            // keepAsking = false;
-            // } catch (NumberFormatException e) {
-            // System.out.println("La cadena no representa un número válido.");
-            // keepAsking = true;
-            // System.out.println(Menu.printMenu());
-            // }
-
-            // }
-
-            keepAsking = true;
 
             switch (Menu.printMenu()) {
                 case 1:
                     word = JOptionPane.showInputDialog("Por favor, introduce una palabra:");
                     Word.addWord(word);
-                    JOptionPane.showMessageDialog(null, "Añadiendo palabra");
-                    JOptionPane.showMessageDialog(null, Dictionary.getDictionary());
+                    JOptionPane.showMessageDialog(null, "Añadiendo palabra...");
                     break;
+                    
                 case 2:
                     word = JOptionPane.showInputDialog("Por favor, introduce una palabra:");
                     Word.deleteWord(word);
@@ -50,8 +35,8 @@ public class App {
                     JOptionPane.showMessageDialog(null, Dictionary.getKeySets());
                     break;
                 case 5:
-                    JOptionPane.showMessageDialog(null, Dictionary.getDictionary().get("a"));
-                    // keepAsking = false;
+                    String initial = JOptionPane.showInputDialog(null, "Ingrese la inicial para buscar en el diccionario");
+                    JOptionPane.showMessageDialog(null, Dictionary.getDictionary().get(initial));
 
                     break;
                 case 6:
