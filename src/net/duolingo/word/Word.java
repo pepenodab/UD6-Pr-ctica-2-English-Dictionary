@@ -11,7 +11,7 @@ public class Word {
 
     public static String getInitial(String word) {
 
-        return word.substring(0, 1);
+        return wordCleaner(word).substring(0, 1);
     }
 
     public static String wordCleaner(String word) {
@@ -27,11 +27,11 @@ public class Word {
     public static void addWord(String word) {
         if (Dictionary.getDictionary().containsKey(getInitial(word))) {
             Set<String> words = setCopier(word);
-            words.add(word);
+            words.add(wordCleaner(word));
             Dictionary.addSet(getInitial(word), words);
         } else {
             Set<String> words = new HashSet<>();
-            words.add(word);
+            words.add(wordCleaner(word));
             Dictionary.addSet(getInitial(word), words);
         }
     }
